@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All UsersList</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="heading-1">Student List</h1>
+
+        <a href="/add" class="add-btn">Add Users</a>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>image</th>
+                    <th>name</th>
+                    <th>email</th>
+                    <th>phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% UsersList.forEach((s)=> {%>
+                    <tr>
+                        <td>
+                            <%=s.image%>
+                        </td>
+                        <td>
+                            <%=s.name%>
+                        </td>
+                        <td>
+                            <%=s.email%>
+                        </td>
+                        <td>
+                            <%=s.phone%>
+                        </td>
+                        <td colspan="2">
+                            <a href="/edit/<%=s.id%>">Edit</a>
+
+                            <a href="/delete/<%=s.id%>">Delete</a>
+                        </td>
+                    </tr>
+                    <%})%>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+
+</html>
